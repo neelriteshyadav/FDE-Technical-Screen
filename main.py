@@ -28,3 +28,15 @@ def sort(width: float, height: float, length: float, mass: float) -> Stack:
         return "SPECIAL"
     else:
         return "STANDARD"
+
+
+if __name__ == "__main__":
+    # Quick test cases
+    print(sort(10, 10, 10, 1))         # STANDARD
+    print(sort(100, 100, 100, 1))      # SPECIAL (bulky by volume)
+    print(sort(150, 1, 1, 1))          # SPECIAL (bulky by dimension)
+    print(sort(10, 10, 10, 20))        # SPECIAL (heavy)
+    print(sort(150, 150, 1, 20))       # REJECTED (bulky + heavy)
+    print(sort(0, 0, 0, 0))            # STANDARD
+    print(sort(-10, -5, -2, 25))       # SPECIAL
+
